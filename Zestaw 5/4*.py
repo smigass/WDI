@@ -3,7 +3,7 @@
 
 from listowanie import *
 
-movements = [[1, 2], [2, 1], [1, -2], [2, -1], [-1, -2], [-2, -1], [-1, 2], [-2, 1]]
+movements = [[1, 2, 3], [2, 1], [1, -2], [2, -1], [-1, -2], [-2, -1], [-1, 2], [-2, 1]]
 
 
 def knight_move(T, row, column, p):
