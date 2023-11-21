@@ -1,0 +1,3 @@
+N = int(input("Podaj liczbę N: "))
+number_copy = str(N)
+# ...
