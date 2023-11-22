@@ -12,6 +12,10 @@ def random_list(n, a):
     return [[random.randint(1, a) for j in range(n)] for i in range(n)]
 
 
+def random_linear_list(n, a):
+    return [random.randint(1, a) for j in range(n)]
+
+
 def is_prime(n):
     if n == 2:
         return True
