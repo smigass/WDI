@@ -4,8 +4,7 @@
 # koszt przejscia króla. Do funkcji nalezy przekazac tablice t oraz startowa kolumne k. Koszt przebywania na
 # polu startowym i ostatnim takze wliczamy do kosztu przejscia.
 import math
-
-from listowanie import *
+from helpers import *
 
 def find_cheapest_way(t, column, row, cost):
     cheapest = +math.inf

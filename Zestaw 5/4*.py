@@ -1,7 +1,7 @@
 # Zadanie 4. Problem skoczka szachowego. Prosze napisac funkcje, która wypełnia pola szachownicy o
 # wymiarach NxN ruchem skoczka szachowego.
 
-from listowanie import *
+from helpers import *
 
 movements = [[1, 2], [2, 1], [1, -2], [2, -1], [-1, -2], [-2, -1], [-1, 2], [-2, 1]]
 
