@@ -1,24 +1,23 @@
 from helpers import *
 
 
-def find_set(T, s):
-    pass
-
-
-def recursive_search(T, i, l, el_sum=0, ids_sum=0, best_l = math.inf):
-    print(i)
+def recursive_search(T, i=0, length=0, el_sum=0, ids_sum=0):
+    if el_sum == ids_sum and ids_sum != 0:
+        return el_sum, length
     if i == len(T):
-        return el_sum == ids_sum, best_l, l
+        return 0, math.inf
 
-    found, b, length = recursive_search(T, i + 1, l, el_sum, ids_sum, best_l)
-    if found and length < best_l:
-        best_l = length
+    s, best_l = recursive_search(T, i + 1, length + 1, el_sum + T[i], ids_sum + i)
+    s1, best_l1 = recursive_search(T, i + 1, length, el_sum, ids_sum)
 
+    better = (s, best_l) if best_l < best_l1 else (s1, best_l1)
 
-
-
+    if i == 0:
+        return better[0]
+    else:
+        return better
 
 
 t1 = [1, 7, 3, 5, 11, 2]
 t = random_linear_list(10, 6)
-print(recursive_search(t1, 0))
+print(recursive_search(t1))
