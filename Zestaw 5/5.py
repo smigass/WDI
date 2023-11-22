@@ -1,3 +1,7 @@
+# Zadanie 5. Dany jest ciag zer i jedynek zapisany w tablicy T[N]. Prosze napisac funkcje, która odpowiada
+# na pytanie czy jest mozliwe pociecie ciagu na kawałki z których kazdy reprezentuje liczbe pierwsza. Długosc
+# kazdego z kawałków nie moze przekraczac 30. Na przykład dla ciagu 111011 jest to mozliwe, a dla ciagu
+# 110100 nie jest mozliwe.
 import math
 import random
 

@@ -13,11 +13,11 @@ def knight_move(T, row, column, p):
     T[row][column] = p
     for v in movements:
         if 0 <= row + v[0] < len(T) and 0 <= column + v[1] < len(T):
-            knight_move(T, row + v[0], column + v[1], p+1)
+            knight_move(T, row + v[0], column + v[1], p + 1)
 
 
 n = 4
 tab = [[0 for i in range(n)] for j in range(n)]
 
 knight_move(tab, 3, 3, 1)
-print(3**27)
+print(3 ** 27)

@@ -3,8 +3,8 @@
 # k. Król musi w dokładnie 7 ruchach dotrzec do wiersza 7. Prosze napisac funkcje, która wyznaczy minimalny
 # koszt przejscia króla. Do funkcji nalezy przekazac tablice t oraz startowa kolumne k. Koszt przebywania na
 # polu startowym i ostatnim takze wliczamy do kosztu przejscia.
-import math
 from helpers import *
+
 
 def find_cheapest_way(t, column, row, cost):
     cheapest = +math.inf
@@ -14,7 +14,7 @@ def find_cheapest_way(t, column, row, cost):
         if t[row + 1][i] < cheapest:
             if 8 > i >= 0:
                 cheapest = t[row + 1][i]
-    return find_cheapest_way(t, column, row + 1, cost+cheapest)
+    return find_cheapest_way(t, column, row + 1, cost + cheapest)
 
 
 T = random_list(8, 9)

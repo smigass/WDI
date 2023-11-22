@@ -2,7 +2,6 @@
 # waga(1)=0, waga(2)=1, waga(6)=2, waga(30)=3, waga(64)=1. Dana jest tablica T[N] zawierajaca liczby
 # naturalne. Prosze napisac funkcje, która sprawdza czy mozna elementy tablicy podzielic na 3 podzbiory o
 # równych wagach. Do funkcji nalezy przekazac wyłacznie tablice, funkcja powinna zwrócic wartosc typu Bool.
-import math
 
 
 def waga(n):
@@ -39,4 +38,3 @@ def check(t, a, b, c, n=0):
 
 
 print(zad2([1, 72, 322, 5, 115, 2]))
-
