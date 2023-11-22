@@ -19,5 +19,5 @@ def recursive_search(T, i=0, length=0, el_sum=0, ids_sum=0):
 
 
 t1 = [1, 7, 3, 5, 11, 2]
-#t = random_linear_list(10, 6)
+# t = random_linear_list(10, 6)
 print(recursive_search(t1))
