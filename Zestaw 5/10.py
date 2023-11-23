@@ -27,7 +27,6 @@ def cut_tab(T, row):
     return new_tab
 
 
-matrix = random_list(random.randint(3, 10), 4)
-listuj(matrix)
+matrix = random_list(random.randint(3, 5), 4)
 
 print(det_nxn(matrix))
