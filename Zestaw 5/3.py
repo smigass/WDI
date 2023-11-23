@@ -7,14 +7,17 @@ from helpers import *
 
 
 def find_cheapest_way(t, column, row, cost):
-    cheapest = +math.inf
-    if row + 1 == 8:
+    #cheapest = +math.inf
+    if row == 7:
         return cost
-    for i in range(column - 1, column + 2):
-        if t[row + 1][i] < cheapest:
-            if 8 > i >= 0:
-                cheapest = t[row + 1][i]
-    return find_cheapest_way(t, column, row + 1, cost + cheapest)
+    if not 0 <= column <= 7:
+        return +math.inf
+    cost += t[row][column]
+    cost1 = find_cheapest_way(t, column - 1, row + 1, cost)
+    cost2 = find_cheapest_way(t, column, row + 1, cost)
+    cost3 = find_cheapest_way(t, column + 1, row + 1, cost)
+
+    return min(cost2, cost3, cost1)
 
 
 T = random_list(8, 9)
