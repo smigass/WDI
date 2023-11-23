@@ -6,20 +6,19 @@
 from helpers import *
 
 
-def find_cheapest_way(t, column, row, cost):
-    #cheapest = +math.inf
+def king(t, col, cost=0, row=0):
+    # cheapest = +math.inf
     if row == 7:
-        return cost
-    if not 0 <= column <= 7:
+        return t[row][col]
+    if not 0 <= col <= 7:
         return +math.inf
-    cost += t[row][column]
-    cost1 = find_cheapest_way(t, column - 1, row + 1, cost)
-    cost2 = find_cheapest_way(t, column, row + 1, cost)
-    cost3 = find_cheapest_way(t, column + 1, row + 1, cost)
+    cost1 = king(t, col - 1, cost + t[row + 1][col - 1], row + 1)
+    cost2 = king(t, col, cost + t[row + 1][col], row + 1)
+    cost3 = king(t, col + 1, cost + t[row + 1][col + 1], row + 1)
 
-    return min(cost2, cost3, cost1)
+    return t[row][col] + min(cost2, cost3, cost1)
 
 
-T = random_list(8, 9)
+T = random_list(8, 20)
 listuj(T)
-print(find_cheapest_way(T, 4, 0, T[0][4]))
+print(king(T, 0, T[0][0]))
