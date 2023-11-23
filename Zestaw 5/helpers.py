@@ -1,6 +1,7 @@
 import math
 import random
 
+# funkcje pomocnicze do zadan
 
 def listuj(T):
     for i in range(len(T)):
