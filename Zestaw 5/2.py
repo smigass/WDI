@@ -22,10 +22,7 @@ def waga(n):
 def zad2(t):
     wagi = [waga(t[i]) for i in range(len(t))]
     print(wagi)
-    s = 0
-    for v in wagi:
-        s += v
-    if s % 3 != 0:
+    if sum(wagi) % 3 != 0:
         return False
     return check(wagi, 0, 0, 0)
 
