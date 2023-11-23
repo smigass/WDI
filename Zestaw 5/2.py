@@ -31,7 +31,6 @@ def zad2(t):
 
 
 def check(t, a, b, c, n=0):
-    print(a, b, c)
     if n == len(t):
         return a == b == c
     return check(t, a + t[n], b, c, n + 1) or check(t, a, b + t[n], c, n + 1) or check(t, a, b, c + t[n], n + 1)
