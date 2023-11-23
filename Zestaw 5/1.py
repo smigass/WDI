@@ -17,14 +17,14 @@ def wykresl(number, t):
     for i in range(length):
         cp = number
         k = 0
-        p = 0
+        next_number = 0
         for j in range(length):
             if i != j:
                 last = cp % 10
-                p += last * 10 ** k
+                next_number += last * 10 ** k
                 k += 1
             cp //= 10
-        wykresl(p, t)
+        wykresl(next_number, t)
 
 
 def is_prime(n):
