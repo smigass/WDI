@@ -6,14 +6,14 @@
 from helpers import *
 
 
-def recursive_search(T, i=0, length=0, el_sum=0, ids_sum=0):
-    if el_sum == ids_sum and ids_sum != 0:
-        return el_sum, length
+def recursive_search(T, i=0, length=0, els_sum=0, ids_sum=0):
+    if els_sum == ids_sum and ids_sum != 0:
+        return els_sum, length
     if i == len(T):
         return 0, math.inf
 
-    s, best_l = recursive_search(T, i + 1, length + 1, el_sum + T[i], ids_sum + i)
-    s1, best_l1 = recursive_search(T, i + 1, length, el_sum, ids_sum)
+    s, best_l = recursive_search(T, i + 1, length + 1, els_sum + T[i], ids_sum + i)
+    s1, best_l1 = recursive_search(T, i + 1, length, els_sum, ids_sum)
 
     better = (s, best_l) if best_l < best_l1 else (s1, best_l1)
 
