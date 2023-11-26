@@ -10,7 +10,6 @@ def enki(T, prod):
         nonlocal result
         if cur_prod * T[index] == prod:
             result += 1
-            return 0
         if index != len(T) - 1:
             search(T, prod, index + 1, cur_prod)
             search(T, prod, index + 1, cur_prod * T[index])
