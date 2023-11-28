@@ -8,6 +8,10 @@ import random
 from helpers import is_prime, to_decimal
 
 
+def is_decimal_prime(n):
+    return is_prime(to_decimal(n, 2))
+
+
 def add_next_binary(n, k):
     n *= 10
     return n + k
@@ -18,10 +22,6 @@ def check(T):
     if T[-2] == 0:
         return False
     return rec_search(T)
-
-
-def is_decimal_prime(n):
-    return is_prime(to_decimal(n, 2))
 
 
 def rec_search(T, i=0, n=0, k=0):
