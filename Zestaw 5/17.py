@@ -1,3 +1,9 @@
+# Zadanie 17. Dane sa dwie liczby naturalne z których budujemy trzecia liczbe. W budowanej liczbie musza
+# wystapic wszystkie cyfry wystepujace w liczbach wejsciowych. Wzajemna kolejnosc cyfr kazdej z liczb
+# wejsciowych musi byc zachowana. Na przykład majac liczby 123 i 75 mozemy zbudowac liczby 12375, 17523,
+# 75123, 17253, itd. Prosze napisac funkcje która wyznaczy ile liczb pierwszych mozna zbudowac z dwóch
+# zadanych liczb.
+
 import math
 
 from helpers import is_prime
