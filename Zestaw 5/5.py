@@ -5,51 +5,40 @@
 import math
 import random
 
-from helpers import is_prime
+from helpers import is_prime, to_decimal
+
+
+def add_next_binary(n, k):
+    n *= 10
+    return n + k
 
 
 def check(T):
     print(T)
-    if T[-1] == 0:
+    if T[-2] == 0:
         return False
-    for i in range(len(T) - 1):
-        start_frag = [1 for _ in range(i + 2)]
-        check_fragment(T, start_frag)
+    return rec_search(T)
 
 
-def check_fragment(T, fragment):
-    if sum(fragment) == len(T):
-        check_primes(T, fragment)
-        return 0
-    fragment[0] += 1
-    check_fragment(T, fragment)
-    k = 0
-    for i in range(1, len(fragment)):
-        if fragment[i] < 30:
-            fragment[i] += 1
-            fragment[i - 1 - k] -= 1
-            k = 0
+def is_decimal_prime(n):
+    return is_prime(to_decimal(n, 2))
+
+
+def rec_search(T, i=0, n=0, k=0):
+    if k > 30:
+        return False
+    if i == len(T) - 1:
+        if is_decimal_prime(n):
+            return True
         else:
-            k += 1
-        check_fragment(T, fragment)
-
-
-def check_primes(T, fragment):
-    index = 0
-    for v in fragment:
-        if not is_prime(join_numbers(T[index:v + index])):
             return False
-        index += v
-    print(True)
+    # mozna (ale nie trzeba) wykonac ciecie w tym miejscu
+    if is_decimal_prime(n) and T[i + 1] != 0:
+        return rec_search(T, i + 1, 0, 0) or rec_search(T, i + 1, add_next_binary(n, T[i]), k + 1)
+    # nie mozna wykonac ciecia wiec idzie dalej
+    else:
+        return rec_search(T, i + 1, add_next_binary(n, T[i]), k + 1)
 
 
-def join_numbers(T):
-    s = 0
-    for i in range(-1, -len(T) - 1, -1):
-        s += T[i] * 10 ** (abs(i) - 1)
-    return s
-
-
-t = [1] + [math.floor(random.random() * 2) for _ in range(random.randint(3, 20))]
-
-print(check([1, 1, 0, 0, 1, 1]))
+length = 45
+print(check([1, *[random.randint(0, 1) for i in range(length)], math.inf]))
