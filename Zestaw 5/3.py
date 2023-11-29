@@ -20,5 +20,5 @@ def king(t, col, cost=0, row=0):
 
 
 T = random_list(8, 20)
-listuj(T)
+list_table(T)
 print(king(T, 0, T[0][0]))

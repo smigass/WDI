@@ -16,5 +16,5 @@ def diff(num, rem_s, k, el=[]):
         diff(num, rem_s - k, k, el + [k])
 
 
-n = 15
+n = 6
 diff(n, n, n)

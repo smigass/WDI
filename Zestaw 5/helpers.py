@@ -4,9 +4,12 @@ import random
 
 # funkcje pomocnicze do zadan
 
-def listuj(T):
+def list_table(T):
+    print()
     for i in range(len(T)):
-        print(T[i])
+        for j in range(len(T)):
+            print(T[i][j], end='\t')
+        print('')
     print()
 
 

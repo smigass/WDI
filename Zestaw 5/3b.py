@@ -28,6 +28,6 @@ def find_cheapest_way(T, k):
 
 
 T = random_list(8, 20)
-listuj(T)
+list_table(T)
 
 print(find_cheapest_way(T, 0))
