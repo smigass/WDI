@@ -35,8 +35,8 @@ def can_move(T, move):
 
 
 # funkcja uzytkowa do testowania
-def r(min, max):
-    return random.randint(min, max)
+def r(m, M):
+    return random.randint(m, M)
 
 
 n = 7
