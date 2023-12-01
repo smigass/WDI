@@ -21,6 +21,14 @@ def random_linear_list(n, a):
     return [random.randint(1, a) for j in range(n)]
 
 
+def random_float_list(n, a):
+    return [random.randint(1, a) * random.random() * 2 for i in range(n)]
+
+
+def random_float_tuple_list(n, a):
+    return [(random.randint(1, a) * random.random() * 2, random.randint(1, a) * random.random() * 2) for i in range(n)]
+
+
 def is_prime(n):
     if n == 2:
         return True
