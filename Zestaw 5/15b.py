@@ -5,7 +5,7 @@ from helpers import list_table
 
 def reformat(uc):
     luc = len(uc)
-    t = [["•" if uc[j] != i else "×" for i in range(luc)] for j in range(luc)]
+    t = [["⚪" if uc[j] != i else "🔴"for i in range(luc)] for j in range(luc)]
     return t
 
 
