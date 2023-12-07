@@ -29,7 +29,7 @@ def get_sum(n):
             rek(prod, depth + 1)
 
     rek()
-    return s
+    return " --> ".join([str(n), str(divisors), str(s)])
 
 
 print(get_sum(60))
