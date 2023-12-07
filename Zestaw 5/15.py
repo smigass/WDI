@@ -8,7 +8,10 @@ def reformat(uc):
     t = [["•" if uc[j] != i else "H" for i in range(8)] for j in range(8)]
     return t
 
+
 counter = 0
+
+
 def hetman(used_cols, dgl1, dgl2, row=0):
     global counter
     # warunek zakończenia (może być if row == 8)
