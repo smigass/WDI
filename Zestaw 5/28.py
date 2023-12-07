@@ -30,9 +30,9 @@ def split(T, index=0, set1=[], set2=[], set3=[]):
     N = len(T)
     if index == N:
         return check_sets([set1, set2, set3])
-    return split(T, index + 1, set1 + [T[index]], set2, set3) or split(T, index + 1, set1, set2 + [T[index]],
-                                                                       set3) or split(T, index + 1, set1, set2,
-                                                                                      set3 + [T[index]])
+    return (split(T, index + 1, set1 + [T[index]], set2, set3)
+            or split(T, index + 1, set1, set2 + [T[index]],set3)
+            or split(T, index + 1, set1, set2,set3 + [T[index]]))
 
 
 t = random_linear_list(15, 20)
