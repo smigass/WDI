@@ -4,7 +4,7 @@
 # bit) jest równa 1, a zbudowana liczba jest złozona. Na przykład dla A = 2, B = 3 ilosc liczb wynosi 3, są to
 # 10010(2), 10100(2), 11000(2)
 
-from helpers import is_prime, to_decimal
+from helpers import is_prime
 
 
 def build_numbers(A, B):
@@ -13,13 +13,13 @@ def build_numbers(A, B):
     def build(A, B, number=1):
         nonlocal counter
         if A == 0 and B == 0:
-            if not is_prime(to_decimal(number, 2)):
+            if not is_prime(number):
                 counter += 1
                 return 0
         if A != 0:
-            build(A - 1, B, number * 10 + 1)
+            build(A - 1, B, number * 2 + 1)
         if B != 0:
-            build(A, B - 1, number * 10)
+            build(A, B - 1, number * 2)
 
     build(A - 1, B)
     return counter
