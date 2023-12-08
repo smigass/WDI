@@ -20,7 +20,7 @@ def check(T, k, index=0, set1=[], set2=[]):
         return ((check(T, k, index + 1, set1, set2) or
                 check(T, k, index + 1, set1 + [T[index]], set2) or
                 check(T, k, index + 1, set1, set2 + [T[index]]))
-                # zakomentowanie tej linijki policzy tylko rozlaczne podzbiory
+                # zakomentowanie linii ponieżej policzy tylko rozlaczne podzbiory
                 or check(T, k, index + 1, set1 + [T[index]], set2 + [T[index]]))
     return False
 
