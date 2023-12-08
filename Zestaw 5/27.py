@@ -37,8 +37,8 @@ def overrunning(sq1, sq2):
 
 
 def in_square(point, sq):
-    if sq[0] < point[0] < sq[1]:
-        if sq[2] < point[1] < sq[3]:
+    if sq[0] <= point[0] <= sq[1]:
+        if sq[2] <= point[1] <= sq[3]:
             return True
     return False
 
@@ -57,6 +57,7 @@ h = []
 k = 0
 for i in range(12):
     h.append((0 + k, 1 + k, 0 + k, 1 + k))
+    k += 1.2
 h.append((1000, 1000 + math.sqrt(2000), 1000, 1000 + math.sqrt(2000)))
 
 # losowe 20 innych kwadratów
