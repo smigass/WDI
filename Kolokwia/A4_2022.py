@@ -1,22 +1,31 @@
+import random
+
 from listowanie import listuj
 
-# TODO - Do poprawy
+knigth = "●"
+empty = "○"
+checked = "x"
+
 N = 9
-# T = [[0 if random.random() < 0.85 else 1 for _ in range(N)] for _ in range(N)]
-T = [
-    [0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 1, 1, 1, 0, 1, 0],
-    [0, 0, 1, 0, 1, 1, 1, 0],
-    [0, 0, 1, 1, 1, 0, 1, 0],
-    [0, 0, 1, 1, 1, 1, 1, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0]
-]
+T = [[empty if random.random() < 0.95 else knigth for _ in range(N)] for _ in range(N)]
 listuj(T)
+
+def check_checks(T):
+    possible_checks = [(1, 2), (2, 1), (1, -2), (2, -1), (-1, 2), (-1, -2), (-2, 1), (-2, -1)]
+    for i in range(len(T)):
+        for j in range(len(T)):
+            if T[i][j] == knigth:
+                for p in possible_checks:
+                    virtual_move = i + p[0], j + p[1]
+                    if 0 <= virtual_move[0] < len(T) and 0 <= virtual_move[1] < len(T):
+                        if T[virtual_move[0]][virtual_move[1]] != knigth:
+                            T[virtual_move[0]][virtual_move[1]] = checked
+    return T
 
 
 def place(t):
+    t = check_checks(t)
+    listuj(t)
     n, min_dist = len(t), len(t)
     middle = (n / 2, n / 2)
     max_new = 0
@@ -24,13 +33,13 @@ def place(t):
     possible_checks = [(1, 2), (2, 1), (1, -2), (2, -1), (-1, 2), (-1, -2), (-2, 1), (-2, -1)]
     for row in range(n):
         for col in range(n):
-            if t[row][col] == 1: continue
+            if t[row][col] == knigth: continue
             dist = max(abs(middle[0] - row), abs(middle[1] - col))
             new = 0
             for p in possible_checks:
                 virtual_move = row + p[0], col + p[1]
                 if 0 <= virtual_move[0] < n and 0 <= virtual_move[1] < n:
-                    if t[virtual_move[0]][virtual_move[1]] == 0:
+                    if t[virtual_move[0]][virtual_move[1]] == empty:
                         new += 1
             if new > max_new:
                 max_new = new
