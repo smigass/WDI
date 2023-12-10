@@ -2,23 +2,23 @@ import random
 
 from listowanie import listuj
 
-knigth = "●"
+knight = "●"
 empty = "○"
 checked = "x"
 
 N = 9
-T = [[empty if random.random() < 0.95 else knigth for _ in range(N)] for _ in range(N)]
+T = [[empty if random.random() < 0.95 else knight for _ in range(N)] for _ in range(N)]
 listuj(T)
 
 def check_checks(T):
     possible_checks = [(1, 2), (2, 1), (1, -2), (2, -1), (-1, 2), (-1, -2), (-2, 1), (-2, -1)]
     for i in range(len(T)):
         for j in range(len(T)):
-            if T[i][j] == knigth:
+            if T[i][j] == knight:
                 for p in possible_checks:
                     virtual_move = i + p[0], j + p[1]
                     if 0 <= virtual_move[0] < len(T) and 0 <= virtual_move[1] < len(T):
-                        if T[virtual_move[0]][virtual_move[1]] != knigth:
+                        if T[virtual_move[0]][virtual_move[1]] != knight:
                             T[virtual_move[0]][virtual_move[1]] = checked
     return T
 
@@ -33,7 +33,7 @@ def place(t):
     possible_checks = [(1, 2), (2, 1), (1, -2), (2, -1), (-1, 2), (-1, -2), (-2, 1), (-2, -1)]
     for row in range(n):
         for col in range(n):
-            if t[row][col] == knigth: continue
+            if t[row][col] == knight: continue
             dist = max(abs(middle[0] - row), abs(middle[1] - col))
             new = 0
             for p in possible_checks:
