@@ -15,8 +15,12 @@ knight = "●"
 empty = "○"
 checked = "x"
 
+# zmienna p (0-1) oznacza szanse na pojawienie sie 0 w randomowej tablicy 0 i 1
+# czyli w teorii stosunek 0 / 1 (p = 1, same 0)
+p = 0.9
+
 N = 9
-T = [[empty if random.random() < 0.90 else knight for _ in range(N)] for _ in range(N)]
+T = [[empty if random.random() < p else knight for _ in range(N)] for _ in range(N)]
 listuj(T)
 
 
