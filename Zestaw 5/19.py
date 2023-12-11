@@ -1,8 +1,6 @@
 # Zadanie 19. Zadanie jak poprzednie. Funkcja sprawdzajaca czy król moze dostac sie z pola w,k do któregokolwiek
 # z narozników.
 
-# TODO - Zadanie do poprawy, jest oszukany append i sprawdzanie not in [].
-
 import math
 
 from helpers import random_list, list_table
