@@ -5,6 +5,8 @@
 
 import math
 
+from helpers import is_prime
+
 
 def wykresl(number, t):
     length = int(math.log10(number)) + 1
@@ -25,17 +27,6 @@ def wykresl(number, t):
                 k += 1
             cp //= 10
         wykresl(next_number, t)
-
-
-def is_prime(n):
-    if n == 2:
-        return True
-    if n % 2 == 0 or n < 2:
-        return False
-    for i in range(3, int(math.sqrt(n)) + 1, 2):
-        if n % i == 0:
-            return False
-    return True
 
 
 wykresl(47263, [])
