@@ -33,3 +33,12 @@ class Node:
             n.val = random.randint(p.val + 1, p.val + 5)
             p.next, p = n, n
         return n
+
+    def crazy_fill(self, n):
+        p = self
+        k = p.val
+        for i in range(n):
+            n = Node()
+            n.val = random.randint(k - 20, k + 20)
+            p.next, p = n, n
+        return n
