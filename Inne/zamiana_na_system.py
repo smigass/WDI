@@ -36,6 +36,17 @@ def to_decimal(n, sys):
         n //= 10
     return number
 
+def to_binary(n):
+    binary = 0
+    i = 0
+    while n != 0:
+        binary += (n % 2) * 10**i
+        i += 1
+        n //= 2
+    return binary
+
+print(to_binary(48))
+
 
 
 to_system(67478, 5)

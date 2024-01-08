@@ -1,7 +1,7 @@
-# Zadanie 6. Dana jest tablica T[N]. Prosze napisac funkcje, która znajdzie niepusty, najmniejszy (w sensie
+# Zadanie 6. Dana jest tablica T[N]. Proszę napisac funkcje, która znajdzie niepusty, najmniejszy (w sensie
 # liczebnosci) podzbiór elementów tablicy, dla którego suma elementów jest równa sumie indeksów tych elementów.
 # Do funkcji nalezy przekazac tablice, funkcja powinna zwrócic sume elementów znalezionego podzbioru.
-# Na przykład dla tablicy: [ 1,7,3,5,11,2 ] rozwiazaniem jest liczba 10.
+# Na przykład dla tablicy: [1,7,3,5,11,2] rozwiazaniem jest liczba 10.
 
 from helpers import *
 

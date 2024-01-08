@@ -34,5 +34,5 @@ def hetman(used_cols, dgl1, dgl2, row=0):
                 used_cols[row] = -1
 
 
-N = 9
+N = 8
 hetman([-1 for _ in range(N)], [False for _ in range(2 * N - 1)], [False for _ in range(2 * N - 1)])

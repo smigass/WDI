@@ -48,6 +48,7 @@ def rozklad(n, ile):
         i += 1
     return s if ile else t
 
+
 def dzielniki(n, ile):
     s = 0
     if not ile:
@@ -68,11 +69,11 @@ def dzielniki(n, ile):
     return s if ile else t
 
 
-a = 1
-b = 36
+a = 576
+b = 7
 print(f"rozkład {a}: {rozklad(a, False)}")
 print(f"pierwsza {a}: {is_prime(a)}")
 print(f"nww({a}, {b}): {nww(a, b)}")
 print(f"nwd({a}, {b}): {nwd(a, b)}")
 print(f"dzielniki: {a}: {dzielniki(a, False)}")
-print([8,9,0,8,9,0])
+print([8, 9, 0, 8, 9, 0])
