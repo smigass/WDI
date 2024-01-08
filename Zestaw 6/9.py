@@ -59,9 +59,9 @@ def check_and_fix(head: Node):
     return head
 
 
-# Początkowa liczba NATURALNA (niebieska)
+# Początkowa liczba NATURALNA (zolta)
 number_list = to_list(102)
-number_list.print()
+number_list.print("yellow")
 
 # zwiekszona (zielona)
 number_list = increase(number_list)
