@@ -46,14 +46,14 @@ def remove(head: Node) -> Node:
     return head
 
 
-# Odsylaczowa z listy
+# Odsylaczowa z listy (niebieska)
 T = [100, 123, 1421, 23, 13, 1, 14, 23, 15, 21]
 ListNode = Node(1).fill_with_list(T)
 ListNode.print()
 
-# Pogladowa odsyłaczowa z zamienionymi elementami na system trójkowy
+# Pogladowa odsyłaczowa z zamienionymi elementami na system trójkowy (zielona)
 copy = Node(1).fill_with_list([to_ternary(T[i]) for i in range(len(T))])
 copy.print("green")
 
-# Po usunięciu elementów
+# Po usunięciu elementów (zolta)
 remove(ListNode).print("yellow")
