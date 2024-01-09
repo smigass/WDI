@@ -42,3 +42,11 @@ class Node:
             n.val = random.randint(k - 20, k + 20)
             p.next, p = n, n
         return n
+
+    def fill_with_list(self, T: list):
+        p = self
+        for v in T:
+            temp = Node(v)
+            p.next = temp
+            p = p.next
+        return self
