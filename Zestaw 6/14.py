@@ -5,17 +5,6 @@
 from Node import Node
 
 
-# Pomocnicza do testowania
-def list_to_node(T) -> Node:
-    head = Node()
-    p = head
-    for v in T:
-        temp = Node(v)
-        p.next = temp
-        p = p.next
-    return head.next
-
-
 def remove(head: Node) -> Node:
     p, q, r = head.next, head, None
     beg = None
