@@ -30,7 +30,7 @@ class Node:
         p = self
         for i in range(n):
             n = Node()
-            n.val = random.randint(p.val + 1, p.val + 5)
+            n.val = random.randint(p.val, p.val + 5)
             p.next, p = n, n
         return n
 
