@@ -30,7 +30,7 @@ def remove(head: Node) -> Node:
     p, q = head, None
     beg = None
     while p is not None:
-        if p == q:  # p i q moga na siebie najsc po usunieciu wiec przesuwamy p
+        if p == q:  # p. I q moga na siebie najsc po usunieciu wiec przesuwamy p
             p = p.next
         elif ternary(p.val):
             if q is None:  # jezeli liczba do usuniecia jest na poczatku to odcinamy pierwszy element i jazda dalej
@@ -43,16 +43,18 @@ def remove(head: Node) -> Node:
             if beg:
                 beg.next, beg = q.next, None
         p, q = p.next, p
+    if beg:
+        beg.next = q.next
     return head
 
 
 # Odsylaczowa z listy (niebieska)
-T = [100, 123, 1421, 23, 13, 1, 14, 23, 15, 21]
+T = [46, 100, 123, 1421, 23, 13, 1, 14, 23, 15, 46, 46]
 ListNode = Node(1).fill_with_list(T)
 ListNode.print()
 
 # Pogladowa odsyłaczowa z zamienionymi elementami na system trójkowy (zielona)
-copy = Node(1).fill_with_list([to_ternary(T[i]) for i in range(len(T))])
+copy = Node(to_ternary(1)).fill_with_list([to_ternary(T[i]) for i in range(len(T))])
 copy.print("green")
 
 # Po usunięciu elementów (zolta)
