@@ -41,6 +41,7 @@ def remove(head: Node) -> Node:
     return head.next
 
 
+# TRZEBA ZMIENIC W Node.py W METODZIE CRAZY FILL RANDOM.RANDINT PRZEDZIAL Z p.val + 1 NA p.val
 ListNode = Node(12)
 ListNode.crazy_fill(12)
 ListNode.print()
