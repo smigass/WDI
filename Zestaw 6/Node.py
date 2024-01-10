@@ -50,3 +50,66 @@ class Node:
             p.next = temp
             p = p.next
         return self
+
+    def fill_with_cycle(self, s, k):
+        p = self
+        for i in range(s - 1):
+            n = Node(random.randint(10, 100))
+            p.next = n
+            p = p.next
+        if k == 0:
+            return self
+        start = Node(random.randint(10, 100))
+        p.next = start
+        p = start
+        if k == 1:
+            start.next = start
+            return self
+        for i in range(k - 2):
+            n = Node(random.randint(10, 100))
+            p.next = n
+            p = p.next
+        n = Node(random.randint(10, 100))
+        n.next = start
+        p.next = n
+        return self.next
+
+    def print_cycle(self, color="blue"):
+        s = set()
+        slow = self
+        while slow not in s:
+            s.add(slow)
+            slow = slow.next
+            if slow is None:
+                print(slow)
+                self.print(color)
+                return 0
+        print(slow)
+        p = self
+        els = []
+        while p is not slow:
+            els.append(colors.bold(str(p.val)))
+            p = p.next
+        rest = []
+        k = slow.next
+        while k is not slow:
+            rest.append(colors.fail(colors.bold(str(k.val))))
+            k = k.next
+        if color == "green":
+            print(colors.green(" → ").join(els), end="")
+            print(colors.green(" → "), end="")
+            print(colors.fail(colors.bold(str(slow.val))), end="")
+            print(colors.green(" → "), end="")
+            print(colors.green(" → ").join(rest))
+        elif color == "blue":
+            print(colors.blue(" → ").join(els), end="")
+            print(colors.blue(" → "), end="")
+            print(colors.fail(colors.bold(str(slow.val))), end="")
+            print(colors.blue(" → "), end="")
+            print(colors.blue(" → ").join(rest))
+        elif color == "yellow":
+            print(colors.yellow(" → ").join(els), end="")
+            print(colors.yellow(" → "), end="")
+            print(colors.fail(colors.bold(str(slow.val))), end="")
+            print(colors.yellow(" → "), end="")
+            print(colors.yellow(" → ").join(rest))
