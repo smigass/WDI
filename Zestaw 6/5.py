@@ -47,7 +47,7 @@ def join(lists):
 
 # Tworzenie głowy (niebieska)
 head = Node(10)
-head.random_fill(100)
+head.crazy_fill(100)
 head.print()
 
 # Dzielenie na 1- list odsyłaczowych (zolte)

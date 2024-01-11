@@ -2,7 +2,7 @@ from Node import Node
 
 
 def reverse(List):
-    h = None
+    h = List
     while List is not None:
         temp = Node(List.val)
         temp.next = h

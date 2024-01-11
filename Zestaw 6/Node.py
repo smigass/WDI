@@ -39,7 +39,7 @@ class Node:
         k = p.val
         for i in range(n):
             n = Node()
-            n.val = random.randint(k - 20, k + 20)
+            n.val = random.randint(k,k + 40)
             p.next, p = n, n
         return n
 
@@ -81,10 +81,8 @@ class Node:
             s.add(slow)
             slow = slow.next
             if slow is None:
-                print(slow)
                 self.print(color)
                 return 0
-        print(slow)
         p = self
         els = []
         while p is not slow:

@@ -5,28 +5,36 @@
 from Node import Node
 
 
-def detect_loop(List: Node) -> bool:
-    slow, fast = List, List.next
-    while slow and fast and slow != fast:
-        slow = slow.next
-        fast = fast.next.next
-    if slow is None or fast is None:
-        return False
-    p = slow.next
-    i = 1
-    while p is not fast:
-        i += 1
+def detect_loop(p):
+    mem = set()
+    while p is not None:
+        if p in mem:
+            return p
+        mem.add(p)
         p = p.next
-    return i
+    return False
+
+
+def cycle_length(p):
+    p = detect_loop(p)
+    if p:
+        k = p.next
+        cnt = 1
+        while k is not p:
+            k = k.next
+            cnt += 1
+        return cnt
+    else:
+        return False
 
 
 # Lista z cyklem
 head = Node(10)
-head.fill_with_cycle(12, 0)
+head.fill_with_cycle(12, 3)
 head.print_cycle("blue")
-print(detect_loop(head))
+print(cycle_length(head))
 
 head2 = Node(10)
-head2.random_fill(10)
-# print(detect_loop(head2))
-# head2.print()
+head2.random_fill(11)
+head2.print()
+print(cycle_length(head2))
