@@ -5,6 +5,7 @@
 from Node import Node
 
 
+# Rozwiazanie 1
 def detect_loop(List: Node) -> bool:
     slow, fast = List, List.next
     while slow and fast and slow != fast:
