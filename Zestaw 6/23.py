@@ -29,8 +29,7 @@ def cycle_length(p):
 
 
 # Lista z cyklem
-head = Node(10)
-head.fill_with_cycle(12, 3)
+head = Node().fill_with_cycle(12, 3)
 head.print_cycle("blue")
 print(cycle_length(head))
 

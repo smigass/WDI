@@ -53,18 +53,18 @@ class Node:
 
     def fill_with_cycle(self, s, k):
         p = self
-        for i in range(s - 1):
+        for i in range(s):
             n = Node(random.randint(10, 100))
             p.next = n
             p = p.next
         if k == 0:
-            return self
+            return self.next
         start = Node(random.randint(10, 100))
         p.next = start
         p = start
         if k == 1:
             start.next = start
-            return self
+            return self.next
         for i in range(k - 2):
             n = Node(random.randint(10, 100))
             p.next = n
@@ -98,16 +98,19 @@ class Node:
             print(colors.green(" → "), end="")
             print(colors.fail(colors.bold(str(slow.val))), end="")
             print(colors.green(" → "), end="")
-            print(colors.green(" → ").join(rest))
+            print(colors.green(" → ").join(rest), end="")
+            print(colors.green(" → "))
         elif color == "blue":
             print(colors.blue(" → ").join(els), end="")
             print(colors.blue(" → "), end="")
             print(colors.fail(colors.bold(str(slow.val))), end="")
             print(colors.blue(" → "), end="")
-            print(colors.blue(" → ").join(rest))
+            print(colors.blue(" → ").join(rest), end="")
+            print(colors.blue(" → "))
         elif color == "yellow":
             print(colors.yellow(" → ").join(els), end="")
             print(colors.yellow(" → "), end="")
             print(colors.fail(colors.bold(str(slow.val))), end="")
             print(colors.yellow(" → "), end="")
-            print(colors.yellow(" → ").join(rest))
+            print(colors.yellow(" → ").join(rest), end="")
+            print(colors.yellow(" → "))
