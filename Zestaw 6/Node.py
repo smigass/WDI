@@ -32,7 +32,7 @@ class Node:
             n = Node()
             n.val = random.randint(p.val, p.val + 5)
             p.next, p = n, n
-        return n
+        return self.next
 
     def crazy_fill(self, n):
         p = self
@@ -41,7 +41,7 @@ class Node:
             n = Node()
             n.val = random.randint(k,k + 40)
             p.next, p = n, n
-        return n
+        return self.next
 
     def fill_with_list(self, T: list):
         p = self
